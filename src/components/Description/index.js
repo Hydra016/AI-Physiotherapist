@@ -2,24 +2,8 @@ import React, { useEffect } from 'react'
 import cameraImg from '../../resources/camera.png';
 import personImg from '../../resources/person.png';
 import deviceImg from '../../resources/device.png';
-import lottie from 'lottie-web';
 
 const Description = () => {
-
-    useEffect(() => {
-        const container = document.getElementById('lottie-container');
-        lottie.loadAnimation({
-          container,
-          renderer: 'svg',
-          loop: false,
-          autoplay: true,
-          path: 'https://assets1.lottiefiles.com/private_files/lf30_codvjmrh.json', // Replace with your Lottie animation URL
-          rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice',
-            background: 'transparent'
-          }
-        });
-      }, []);
 
   return (
     <div id='description-page' className='page-secondary'>

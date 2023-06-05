@@ -46,12 +46,10 @@ const Video = () => {
             correctValues += "left elbow is too High\n";
           }
           // right elbow
-          if (pose.keypoints[6].position.y >= 190 && pose.keypoints[6].position.y <= 240) {
-            correctValues += "left arm moving correctly\n";
+          if (pose.keypoints[6].position.y >= 190) {
+            correctValues += "right arm moving correctly\n";
           } else if (pose.keypoints[6].position.y < 190) {
-            correctValues += "left elbow is too low\n";
-          } else if (pose.keypoints[6].position.y >240) {
-            correctValues += "left elbow is too High\n";
+            correctValues += "right elbow is too high\n";
           }
           break;
         case 'side leg lift':
@@ -77,7 +75,9 @@ const Video = () => {
         console.log(err);
       }
     };
-    
+
+    console.log(correct)
+
     const detect = async (net) => {
       if (
         typeof webcamRef.current !== "undefined" &&
